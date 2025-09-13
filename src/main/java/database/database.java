@@ -4,6 +4,7 @@
  */
 package database;
 import classes.Pokemon;
+import classes.Tipo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,15 +15,32 @@ import java.util.List;
 public class database {
     //Model Pokemon
     private List<Pokemon> pokemons;
+    private List<Tipo> tipos;
     
     
     public database(){
         this.pokemons = new ArrayList();
-        this.seeder();
+        this.tipos = new ArrayList();
+//this.seeder();
     }
     
-    public void seeder(){
-    pokemons.add(new Pokemon(546, "Cottonee", "Planta", "Fada", 50,0.6f, 30, true)); //Adrian Kauan Aquino de Melo
+    public void seederTipos(){
+       Tipo fogo = new Tipo(1, "Fogo");
+       tipos.add(fogo);
+       Tipo agua = new Tipo(2, "Agua");
+       tipos.add(agua);
+       Tipo planta = new Tipo(3, "Planta");
+       tipos.add(planta);
+       
+       fogo.setFraqueza(2);
+       agua.setFraqueza(3);
+       planta.setFraqueza(1);
+    }
+    
+    
+    
+    public void seederPokemon(){
+    /*pokemons.add(new Pokemon(546, "Cottonee", "Planta", "Fada", 50,0.6f, 30, true)); //Adrian Kauan Aquino de Melo
     pokemons.add(new Pokemon(572, "Minccino","Normal", 50,5,4,true));//Ana Louise Lima Silva
     pokemons.add(new Pokemon(103, "Exeggutor", "Planta", 140, 120, 200, true));//Ana Paula de O. de Freitas
     pokemons.add(new Pokemon(696, "Clauncher", "Aquático", 60, 8, 50, true));//André Lucas Silva de Oliveira
@@ -46,7 +64,8 @@ public class database {
     pokemons.add(new Pokemon(712, "Bergmite","Gelo",null, 70, 99.5f, 1,true));//Ryan Rigoto
     pokemons.add(new Pokemon(226, "Mantine","Água","Voador",85, 220f, 2,false));//WILLIAN WITTIENZO
     pokemons.add(new Pokemon(25, "Pikachu","Eletrico", 35, 6.0f, 40,true));//Pedro Baleroni
-    }
+    */
+}
     
     public Pokemon buscaPokemon(int id){
         
