@@ -54,6 +54,9 @@ public class Pokemon {
     public void setNome(String nome){
         this.nome = nome;
     }
+    public String getNome(){
+        return this.nome;
+    }
     
     public int getNumero(){
         return this.numero;
@@ -63,7 +66,27 @@ public class Pokemon {
         this.numero = numero;
     }
     
+    public void setTipo(String tipo1, String tipo2){
+        this.tipo1 = tipo1;
+        this.tipo2 = tipo2;
+    }
     
+    public String getTipo(){
+        if(this.tipo2 == null){
+            return this.tipo1;
+        }else{
+            return this.tipo1 + "/" + this.tipo2;
+        }
+    }
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString(){
+        return this.nome + " - " + this.numero;
+    }
 
     
 }
