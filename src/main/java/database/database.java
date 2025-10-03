@@ -25,16 +25,44 @@ public class database {
     }
     
     public void seederTipos(){
-       Tipo fogo = new Tipo(1, "Fogo");
-       tipos.add(fogo);
+       Tipo aco = new Tipo(1,"Aço");
        Tipo agua = new Tipo(2, "Agua");
-       tipos.add(agua);
-       Tipo planta = new Tipo(3, "Planta");
-       tipos.add(planta);
+       Tipo dragao = new Tipo(3, "Dragão");
+       Tipo eletrico = new Tipo(4, "Elétrico");
+       Tipo fada = new Tipo(5,"Fada");
+       Tipo fantasma = new Tipo(6, "Fantasma");
+       Tipo fogo = new Tipo(7, "Fogo");
+       Tipo gelo = new Tipo(8, "Gelo");
+       Tipo inseto = new Tipo(9, "Inseto");
+       Tipo lutador = new Tipo(10, "Lutador");
+       Tipo normal = new Tipo(11, "Normal");
+       Tipo pedra = new Tipo(12,"Pedra");
+       Tipo planta = new Tipo(13, "Planta");
+       Tipo psiquico = new Tipo( 14, "Psíquico");
+       Tipo sombrio = new Tipo(15, "Sombrio");
+       Tipo terrestre = new Tipo (16, "Terrestre");
+       Tipo venenoso = new Tipo (17, "Venenoso");
+       Tipo voador = new Tipo(18, "Voador");
        
-       fogo.setFraqueza(2);
-       agua.setFraqueza(3);
-       planta.setFraqueza(1);
+       this.tipos.add(aco);
+       this.tipos.add(agua);
+       this.tipos.add(dragao);
+       this.tipos.add(eletrico);
+       this.tipos.add(fada);
+       this.tipos.add(fantasma);
+       this.tipos.add(fogo);
+       this.tipos.add(gelo);
+       this.tipos.add(inseto);
+       this.tipos.add(lutador);
+       this.tipos.add(normal);
+       this.tipos.add(pedra);
+       this.tipos.add(planta);
+       this.tipos.add(psiquico);
+       this.tipos.add(sombrio);
+       this.tipos.add(terrestre);
+       this.tipos.add(venenoso);
+       this.tipos.add(voador);
+       
     }
     
     
