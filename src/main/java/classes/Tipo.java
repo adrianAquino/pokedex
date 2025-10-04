@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package classes;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,18 +12,18 @@ import java.util.ArrayList;
  * @author Aluno
  */
 public class Tipo {
+
     int indice;
     String nome;
     private List<Tipo> fraquezas;
     private List<Tipo> resistencias;
-    
 
-    public Tipo(int indice,String nome){
+    public Tipo(int indice, String nome) {
         this.indice = indice;
         this.nome = nome;
     }
-    
-    public Tipo (int indice, String nome, Tipo fraqueza, Tipo resistencia){
+
+    public Tipo(int indice, String nome, Tipo fraqueza, Tipo resistencia) {
         this.indice = indice;
         this.nome = nome;
         this.fraquezas = new ArrayList();
@@ -30,52 +31,66 @@ public class Tipo {
         this.resistencias = new ArrayList();
         this.resistencias.add(resistencia);
     }
-    
-   
-    public String getNome(){
+
+    public String getNome() {
         return this.nome;
     }
-    
-    public void setFraquezas(List<Tipo> fraquezas){
+
+    public void setFraquezas(List<Tipo> fraquezas) {
         this.fraquezas = new ArrayList();
-        for(Tipo t:fraquezas){
+        for (Tipo t : fraquezas) {
             this.fraquezas.add(t);
         }
     }
-    
-    public void addFraqueza(List<Tipo> fraquezas){
-        for(Tipo t:fraquezas){
+
+    public void addFraqueza(List<Tipo> fraquezas) {
+        for (Tipo t : fraquezas) {
             this.fraquezas.add(t);
         }
     }
-    
-    public String getFraquezas(){
+
+    public String getFraquezas() {
         String fraquezas = "";
-        for (Tipo arnaldo: this.fraquezas){
+        for (Tipo arnaldo : this.fraquezas) {
             fraquezas += arnaldo.getNome() + "";
         }
         return fraquezas;
     }
-    
-    public void setResistencias(List<Tipo> resistencias){
+
+    public void setResistencias(List<Tipo> resistencias) {
         this.resistencias = new ArrayList();
-        for(Tipo t:resistencias){
+        for (Tipo t : resistencias) {
             this.resistencias.add(t);
         }
     }
-    
-    public void addResistencias(List<Tipo> resistencias){
-        for(Tipo t:resistencias){
+
+    public void addResistencias(List<Tipo> resistencias) {
+        for (Tipo t : resistencias) {
             this.resistencias.add(t);
         }
     }
-    
-    public String getResistencias(){
+
+    public String getResistencias() {
         String resistencias = "";
-        for (Tipo arnaldo: this.resistencias){
+        for (Tipo arnaldo : this.resistencias) {
             resistencias += arnaldo.getNome() + "";
         }
         return resistencias;
     }
     
+    //////////////////////////////////////////////////////
+    public void addFraqueza(Tipo tipo) {
+        if (this.fraquezas == null) {
+            this.fraquezas = new ArrayList<>();
+        }
+        this.fraquezas.add(tipo);
+    }
+
+    public void addResistencia(Tipo tipo) {
+        if (this.resistencias == null) {
+            this.resistencias = new ArrayList<>();
+        }
+        this.resistencias.add(tipo);
+    }
+
 }
