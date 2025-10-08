@@ -13,18 +13,16 @@ import java.util.ArrayList;
  */
 public class Tipo {
 
-    int indice;
+
     String nome;
     private List<Tipo> fraquezas;
     private List<Tipo> resistencias;
 
-    public Tipo(int indice, String nome) {
-        this.indice = indice;
+    public Tipo(String nome) {
         this.nome = nome;
     }
 
-    public Tipo(int indice, String nome, Tipo fraqueza, Tipo resistencia) {
-        this.indice = indice;
+    public Tipo(String nome, Tipo fraqueza, Tipo resistencia) {
         this.nome = nome;
         this.fraquezas = new ArrayList();
         this.fraquezas.add(fraqueza);
@@ -79,6 +77,7 @@ public class Tipo {
     }
     
     //////////////////////////////////////////////////////
+    //Sobrecarga de método para criar add fraqueza e resistencia sem precisar de criar lista
     public void addFraqueza(Tipo tipo) {
         if (this.fraquezas == null) {
             this.fraquezas = new ArrayList<>();
@@ -92,5 +91,6 @@ public class Tipo {
         }
         this.resistencias.add(tipo);
     }
+    //////////////////////////////////////////////////////
 
 }
