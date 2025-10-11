@@ -14,33 +14,49 @@ import java.util.ArrayList;
  */
 public class Pokemon {
 
-    public Pokemon() {
-    }
+    
     private int numero;
     private String nome;
     private List<Tipo> tipos;
-    private int vida;
-    private float peso;
-    private int altura; //altura em centimetros
-    private boolean evolui;
+    private Pokemon evoluiPara; //objeto Pokemon, próximo na linha evolutiva
+    //evoluiPara pode ser nulo;
+    private int evoluiEm; //Nível pokemon passa para o próxima evolução
+    private boolean lendario; //Para especie raras de pokemon
+    
+    public Pokemon() {
+    }
     
     public Pokemon(int numero, String nome,
             List<Tipo> tipos, 
-            int vida, float peso, 
-            int altura, boolean evolui){
+            Pokemon evoluiPara, int evoluiEm, boolean lendario){
         this.numero = numero;
         this.nome = nome;
         this.tipos = new ArrayList();
         for(Tipo t:tipos){
             this.tipos.add(t);
         }
-        this.vida = vida;
-        this.peso = peso;
-        this.altura = altura;
-        this.evolui = evolui;
+        this.evoluiPara = new Pokemon();
+        this.evoluiPara = evoluiPara;
+        this.evoluiEm = evoluiEm;
+        this.lendario = lendario;
+        
         
     }
-
+        //Sobrecarga do construtor
+     public Pokemon(int numero, String nome,
+            List<Tipo> tipos, 
+             boolean lendario){
+        this.numero = numero;
+        this.nome = nome;
+        this.tipos = new ArrayList();
+        for(Tipo t:tipos){
+            this.tipos.add(t);
+        }
+        this.lendario = lendario;
+        
+        
+    }
+    
     
     public void setNome(String nome){
         this.nome = nome;
@@ -83,6 +99,29 @@ public class Pokemon {
          return this.tipos;
     }
     
+    public Pokemon getEvoluiPara(){
+        return this.evoluiPara;
+    }
+    public int getEvoluiEm(){
+        return this.evoluiEm;
+    }
+    
+    public boolean isLendario(){
+        return this.lendario;
+    }
+    
+    public void setEvoluiPara(Pokemon pokemon){
+        this.evoluiPara = new Pokemon();
+        this.evoluiPara = pokemon;
+    }
+    
+    public void setEvoluiEm(int nivel){
+        this.evoluiEm = nivel;
+    }
+    
+    public void setLendario( boolean lendario){
+        this.lendario = lendario;
+    }
     /**
      *
      * @return
@@ -91,7 +130,7 @@ public class Pokemon {
     public String toString(){
         return this.nome + " - " + this.numero;
     }
-
+    
     
 }
 
