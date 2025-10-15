@@ -32,15 +32,16 @@ public class Pokemon {
         this.numero = numero;
         this.nome = nome;
         this.tipos = new ArrayList();
-        for(Tipo t:tipos){
+        for(Tipo t: tipos){
             this.tipos.add(t);
         }
+        if(evoluiPara != null){
         this.evoluiPara = new Pokemon();
         this.evoluiPara = evoluiPara;
         this.evoluiEm = evoluiEm;
+        
+        }
         this.lendario = lendario;
-        
-        
     }
         //Sobrecarga do construtor
      public Pokemon(int numero, String nome,
