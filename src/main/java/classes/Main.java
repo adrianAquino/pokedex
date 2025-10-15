@@ -16,19 +16,22 @@ public class Main {
     public static void main(String[] args) {
         //Pokemon(Numero, Nome, Tipo1, Tipo2?, vida, peso, altura, evolui)
           Database bd = new Database();
-         
-          Tipo pedra = bd.buscaTipo("Pedra");
+            bd.inicialize();
+            Pokemon pikachu = bd.buscaPokemon("Diglett");
+            
           
-          System.out.println(pedra.getFraquezas());
+            System.out.println(pikachu.getEvoluiPara().getNome());
           
-          List tipos_do_pikachu = new ArrayList<>(List.of(bd.buscaTipo("Eletrico")));
+         // System.out.println(pedra.getFraquezas());
           
-          Pokemon pikachu = new Pokemon(25, "Pikachu" ,tipos_do_pikachu ,true);
-          Pokemon raichu = new Pokemon(26, "Raichu", tipos_do_pikachu,true);
+          //List tipos_do_pikachu = new ArrayList<>(List.of(bd.buscaTipo("Eletrico")));
+          
+          //Pokemon pikachu = new Pokemon(25, "Pikachu" ,tipos_do_pikachu ,true);
+          //Pokemon raichu = new Pokemon(26, "Raichu", tipos_do_pikachu,true);
           
           
-          System.out.println(pikachu.getTipoFraquezas());
-          System.out.println(raichu.getTipoFraquezas());
+          //System.out.println(pikachu.getTipoFraquezas());
+         // System.out.println(raichu.getTipoFraquezas());
         //Tipo fogo = null;
        // Tipo agua = null;
         //Tipo aco = null;
