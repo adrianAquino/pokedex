@@ -22,47 +22,48 @@ public class Database {
     public Database() {
         this.pokemons = new ArrayList();
         this.tipos = new ArrayList();
-//this.seeder();
+        this.seederTipos();
     }
 
     public void seederTipos() {
         Tipo aco = new Tipo("Aco");
+         tipos.add(aco);
         Tipo agua = new Tipo("Agua");
+         tipos.add(agua);
         Tipo dragao = new Tipo("Dragao");
+        tipos.add(dragao);
         Tipo eletrico = new Tipo("Eletrico");
+         tipos.add(eletrico);
         Tipo fada = new Tipo("Fada");
+        tipos.add(fada);
         Tipo fantasma = new Tipo("Fantasma");
+        tipos.add(fantasma);
         Tipo fogo = new Tipo("Fogo");
+        tipos.add(fogo);
         Tipo gelo = new Tipo("Gelo");
+         tipos.add(gelo);
         Tipo inseto = new Tipo("Inseto");
+        tipos.add(inseto);
         Tipo lutador = new Tipo("Lutador");
+        tipos.add(lutador);
         Tipo normal = new Tipo("Normal");
+         tipos.add(normal);
         Tipo pedra = new Tipo("Pedra");
+         tipos.add(pedra);
         Tipo planta = new Tipo("Planta");
+        tipos.add(planta);
         Tipo psiquico = new Tipo("Psiquico");
+        tipos.add(psiquico);
         Tipo sombrio = new Tipo("Sombrio");
+        tipos.add(sombrio);
         Tipo terrestre = new Tipo("Terrestre");
+        tipos.add(terrestre);
         Tipo venenoso = new Tipo("Venenoso");
+        tipos.add(venenoso);
         Tipo voador = new Tipo("Voador");
+        tipos.add(voador);
 
-        this.tipos.add(aco);
-        this.tipos.add(agua);
-        this.tipos.add(dragao);
-        this.tipos.add(eletrico);
-        this.tipos.add(fada);
-        this.tipos.add(fantasma);
-        this.tipos.add(fogo);
-        this.tipos.add(gelo);
-        this.tipos.add(inseto);
-        this.tipos.add(lutador);
-        this.tipos.add(normal);
-        this.tipos.add(pedra);
-        this.tipos.add(planta);
-        this.tipos.add(psiquico);
-        this.tipos.add(sombrio);
-        this.tipos.add(terrestre);
-        this.tipos.add(venenoso);
-        this.tipos.add(voador);
+        
 
         /// AÇO
         List fraquezas = new ArrayList<>(List.of(fogo, terrestre, lutador));
@@ -266,6 +267,15 @@ public class Database {
 
     public List<Tipo> getTipos() {
         return this.tipos;
+    }
+    
+    public Tipo buscaTipo(String nome){
+        for (Tipo t : tipos){
+            if(t.getNome() == nome){
+                return t;
+            }
+        }
+        return null;
     }
 
     public List<Pokemon> getPokemons() {
